@@ -1,11 +1,11 @@
 {
-  "id": "040ca8bc-43da-4b10-b87b-d99927c466eb",
+  "id": "b4b426fb-75b4-4424-a929-34095d3daf07",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "6",
   "dialect": "postgresql",
   "tables": {
-    "public.amp-description-db_preset": {
-      "name": "amp-description-db_preset",
+    "public.amp-description-db_amp_preset": {
+      "name": "amp-description-db_amp_preset",
       "schema": "",
       "columns": {
         "id": {
@@ -18,7 +18,13 @@
           "name": "name",
           "type": "varchar(256)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
+        },
+        "sort_as": {
+          "name": "sort_as",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -45,7 +51,22 @@
       },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "amp-description-db_amp_preset_name_unique": {
+          "name": "amp-description-db_amp_preset_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
+          ]
+        },
+        "amp-description-db_amp_preset_sort_as_unique": {
+          "name": "amp-description-db_amp_preset_sort_as_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "sort_as"
+          ]
+        }
+      }
     }
   },
   "enums": {},
