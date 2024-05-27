@@ -4,6 +4,6 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const presetRouter = createTRPCRouter({
   getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.db.query.presets.findMany();
+    return ctx.db.query.ampPresets.findMany();
   }),
 });
