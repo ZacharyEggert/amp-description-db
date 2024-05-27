@@ -1,0 +1,79 @@
+{
+  "id": "b60b8ba8-acf0-4e5f-a958-0c144eb14e47",
+  "prevId": "040ca8bc-43da-4b10-b87b-d99927c466eb",
+  "version": "6",
+  "dialect": "postgresql",
+  "tables": {
+    "public.amp-description-db_amp_preset": {
+      "name": "amp-description-db_amp_preset",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sort_as": {
+          "name": "sort_as",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "name_idx": {
+          "name": "name_idx",
+          "columns": [
+            "name"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "amp-description-db_amp_preset_name_unique": {
+          "name": "amp-description-db_amp_preset_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
+          ]
+        },
+        "amp-description-db_amp_preset_sort_as_unique": {
+          "name": "amp-description-db_amp_preset_sort_as_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "sort_as"
+          ]
+        }
+      }
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
